@@ -103,7 +103,9 @@ export const usePromptStore = defineStore('prompts', () => {
 
   async function exportData(): Promise<Blob> {
     const data = await db.exportDatabase();
-    return new Blob([data], { type: 'application/octet-stream' });
+    // Convert Uint8Array to ArrayBuffer for Blob compatibility
+    const arrayBuffer = data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength) as ArrayBuffer;
+    return new Blob([arrayBuffer], { type: 'application/octet-stream' });
   }
 
   async function importData(file: File): Promise<void> {

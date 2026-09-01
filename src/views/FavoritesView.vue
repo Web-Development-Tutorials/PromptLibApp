@@ -34,7 +34,7 @@ function goBack() {
             <ArrowLeft :size="24" />
           </button>
           <h1 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            <Star class="text-yellow-500" :size="28" :fill="currentColor" />
+            <Star class="text-yellow-500" :size="28" />
             Favorite Prompts
           </h1>
         </div>
@@ -72,7 +72,7 @@ function goBack() {
           :key="prompt.id"
           :prompt="prompt"
           @toggle-favorite="store.toggleFavorite"
-          @edit="(p) => router.push('/')"
+          @edit="() => router.push('/')"
           @delete="(id) => store.removePrompt(id)"
         />
       </div>

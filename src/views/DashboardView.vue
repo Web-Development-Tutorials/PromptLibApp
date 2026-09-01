@@ -2,7 +2,7 @@
 import { usePromptStore } from '@/stores/promptStore';
 import PromptCard from '@/components/PromptCard.vue';
 import PromptModal from '@/components/PromptModal.vue';
-import { Plus, Search, FolderOpen, Star, Download, Upload, Settings } from 'lucide-vue-next';
+import { Plus, Search, FolderOpen, Star, Download, Upload } from 'lucide-vue-next';
 import { ref, onMounted, computed } from 'vue';
 import type { Prompt } from '@/db/database';
 
